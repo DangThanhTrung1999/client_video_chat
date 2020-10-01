@@ -10,6 +10,7 @@ playStream = (idVideoTag, stream) => {
 };
 
 var peer = new Peer();
+
 peer.on("open", (id) => {
   $("#my-peer").append(id);
   $("#btnSignup").click(() => {
@@ -32,7 +33,7 @@ $("#btnCall").click(() => {
     playStream("localStream", stream);
     const call = peer.call(id, stream);
     call.on("stream", (remoteStream) =>
-      playStream("remoteStream", remoteStream)
+      playStream("remoteStream2", remoteStream)
     );
   });
 });
